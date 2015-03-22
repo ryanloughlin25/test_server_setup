@@ -10,7 +10,7 @@ if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
   eval "$(rbenv init -)"
 fi' >> /home/deploy/.bash_profile;
-source /home/deploy/.bash_profile;
+. /home/deploy/.bash_profile;
 rbenv bootstrap-ubuntu-12-04;
 rbenv install 2.0.0-p481;
 rbenv rehash;
