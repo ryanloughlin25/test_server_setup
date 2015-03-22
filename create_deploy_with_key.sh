@@ -6,7 +6,7 @@ mv /root/id_rsa.pub /home/deploy/.ssh/authorized_keys;
 chmod 400 /home/deploy/.ssh/authorized_keys;
 chown deploy:deploy /home/deploy -R
 echo "deploy ALL=(ALL) ALL" >> /etc/sudoers;
-#sed commands to edit sshd_config
-sed -i s/PermitRootLogin yes/PermitRootLogin no/g;
-sed -i s/#PasswordAuthentication yes/PasswordAuthentication no/g;
+sed -i "s/PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config;
+sed -i "s/#PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config;
 service ssh restart;
+rm create_deploy_with_key.sh;
