@@ -9,4 +9,3 @@ echo "deploy ALL=(ALL) ALL" >> /etc/sudoers;
 sed -i "s/PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config;
 sed -i "s/#PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config;
 service ssh restart;
-rm create_deploy_with_key.sh;
