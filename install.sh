@@ -13,4 +13,4 @@ if [ -d "${RBENV_ROOT}" ]; then
 fi' >> /home/deploy/.bash_profile;
 . /home/deploy/.bash_profile;
 rbenv bootstrap-ubuntu-12-04;
-screen -d -m sh install_ruby_rails.sh;
+screen -d -m bash -c "curl https://raw.githubusercontent.com/ryanloughlin25/test_server_setup/master/install_ruby_rails.sh | bash";
